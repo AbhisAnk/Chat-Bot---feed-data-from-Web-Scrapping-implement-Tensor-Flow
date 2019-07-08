@@ -45,7 +45,7 @@ for url in my_urls:
     # To process property by property by looping
     
 
-    #for i in zip(paragraph_contents):
+    
     
     # To store the information to a dictionary
     web_content_dict = {}
