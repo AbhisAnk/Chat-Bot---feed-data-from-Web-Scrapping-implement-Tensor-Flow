@@ -63,6 +63,6 @@ df = pandas.DataFrame(web_content_list)
 
 
 
-df = pandas.DataFrame(web_content_list)
+df = pd.DataFrame(web_content_list)
 
-print(df)
+df
