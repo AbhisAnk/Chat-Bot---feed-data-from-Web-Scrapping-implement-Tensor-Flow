@@ -1,0 +1,74 @@
+Approved version - Reading multiple URLS
+				 - Writing in DataFrame once per URL 
+
+
+
+
+web_content_list = []
+for url in my_urls:
+    
+    #gui_data = {}
+#incrmntl = 0
+    uClient = uReq(url)
+    print(url)
+    page_html = uClient.read()
+#uClient.close()
+
+#print("url")
+#print("\n")
+#print (url)
+    page_soup = soup(page_html, "html.parser")
+    question_content = page_soup.h1.string
+    paragraph_content = page_soup.findAll("p", {"class":"BodyText"})
+    print(question_content)
+    print("\n")
+    print (paragraph_content)
+    print("\n")
+    print("Before writing into dict")
+    
+    page_paras = page_soup.findAll("p", {"class":"BodyText"})
+    
+    answ = []
+        
+    for page_para in page_paras:
+            
+            page_pexcludr = page_para.text.replace("\r","").strip()
+            page_exclud_rn = page_pexcludr.replace("\n","")
+            page_exclud_rnx = page_exclud_rn.replace("\xa0","")
+            final_para = page_exclud_rnx.replace("//<![CDATA[TextPopupInit('HotSpot26462', 'POPUP26462');//]]> "," ")
+            print(final_para)
+            
+            answ.append(final_para)
+
+    paragraph_append = answ
+    paragraph_contents = paragraph_append
+    print("\n")
+    print("paragraph_contents")
+    print(paragraph_contents)
+    print("\n")
+    #question_content = soup.find('h1')
+    #paragraph_content = page_soup.findAll("p", {"class":"BodyText"})
+    # To process property by property by looping
+    
+
+    #for i in zip(paragraph_contents):
+    
+    # To store the information to a dictionary
+    web_content_dict = {}
+    web_content_dict["quest"] = question_content
+    
+    web_content_dict["answ"] = paragraph_contents
+   
+  
+    
+# To store the dictionary to into a list
+    web_content_list.append(web_content_dict)
+    
+# To make a dataframe with the list
+df = pandas.DataFrame(web_content_list)
+
+
+
+df = pandas.DataFrame(web_content_list)
+
+print(df)
