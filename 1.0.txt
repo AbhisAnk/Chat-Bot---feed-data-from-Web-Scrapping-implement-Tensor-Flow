@@ -7,16 +7,10 @@ Approved version - Reading multiple URLS
 web_content_list = []
 for url in my_urls:
     
-    #gui_data = {}
-#incrmntl = 0
     uClient = uReq(url)
     print(url)
     page_html = uClient.read()
-#uClient.close()
 
-#print("url")
-#print("\n")
-#print (url)
     page_soup = soup(page_html, "html.parser")
     question_content = page_soup.h1.string
     paragraph_content = page_soup.findAll("p", {"class":"BodyText"})
@@ -46,8 +40,8 @@ for url in my_urls:
     print("paragraph_contents")
     print(paragraph_contents)
     print("\n")
-    #question_content = soup.find('h1')
-    #paragraph_content = page_soup.findAll("p", {"class":"BodyText"})
+    
+    
     # To process property by property by looping
     
 
