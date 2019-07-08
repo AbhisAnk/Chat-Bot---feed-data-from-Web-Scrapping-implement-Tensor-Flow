@@ -1,5 +1,5 @@
-Approved version - Reading multiple URLS
-				 - Writing in DataFrame once per URL 
+#Approved version - Reading multiple URLS
+#				 - Writing in DataFrame once per URL 
 
 
 
@@ -14,11 +14,11 @@ for url in my_urls:
     page_soup = soup(page_html, "html.parser")
     question_content = page_soup.h1.string
     paragraph_content = page_soup.findAll("p", {"class":"BodyText"})
-    print(question_content)
-    print("\n")
-    print (paragraph_content)
-    print("\n")
-    print("Before writing into dict")
+    #print(question_content)
+    #print("\n")
+    #print (paragraph_content)
+    #print("\n")
+    #print("Before writing into dict")
     
     page_paras = page_soup.findAll("p", {"class":"BodyText"})
     
