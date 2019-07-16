@@ -24,6 +24,8 @@ for url in my_urls:
     
     answ = []
         
+    # To find all para tag present under single url
+    
     for page_para in page_paras:
             
             page_pexcludr = page_para.text.replace("\r","").strip()
@@ -34,18 +36,10 @@ for url in my_urls:
             
             answ.append(final_para)
 
-    paragraph_append = answ
-    paragraph_contents = paragraph_append
-    print("\n")
-    print("paragraph_contents")
-    print(paragraph_contents)
-    print("\n")
-    
-    
-    # To process property by property by looping
-    
-
-    
+   
+    paragraph_contents = answ
+     
+  
     
     # To store the information to a dictionary
     web_content_dict = {}
@@ -61,8 +55,6 @@ for url in my_urls:
 # To make a dataframe with the list
 df = pandas.DataFrame(web_content_list)
 
-
-
-df = pd.DataFrame(web_content_list)
+#df = pd.DataFrame(web_content_list)
 
 df
